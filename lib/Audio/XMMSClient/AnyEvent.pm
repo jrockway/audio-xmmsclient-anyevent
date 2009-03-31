@@ -58,21 +58,4 @@ sub handle_out {
     }
 }
 
-# sub request {
-#     my $self = shift;
-#     my $func = shift;
-
-#     my $callback  = pop;
-
-#     if (!$self->can($func)) {
-#         Carp::croak( "Invalid request name `${func}' given" );
-#     }
-
-#     my $cv = AnyEvent->condvar;
-#     my $result = $self->$func( @_ );
-#     $result->notifier_set(sub { $cv->send( @_ ) });
-
-#     return $cv;
-# }
-
 1;
