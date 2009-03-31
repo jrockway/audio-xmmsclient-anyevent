@@ -15,7 +15,7 @@ sub connect {
     $self->io_need_out_callback_set(\&need_out);
     $self->{in_watch} = AnyEvent->io(
         fh   => $self->{fh},
-        poll => 'w',
+        poll => 'r',
         cb   => sub { $self->handle_in(@_) },
     );
 
